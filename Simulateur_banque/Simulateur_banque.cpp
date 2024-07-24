@@ -2,19 +2,53 @@
 //
 
 #include <iostream>
+#include <string>
+
+using namespace std;
+
+class CompteBancaire {
+private:
+    string nom;
+    double solde;
+
+public:
+    CompteBancaire(): nom(""), solde(0.0) {}
+
+    CompteBancaire(string nom, double solde_initial) {
+        nom = nom;
+        solde = solde_initial;
+    }
+};
+
+class Banque {
+private:
+    //CompteBancaire compte[];
+    int compteur;
+
+public:
+    Banque (): compteur(0){}
+
+    void creerCompte( string nom, double solde_initial) {
+        cout << "Entrer le nom du proprietaire du compte:";
+        cin >> nom;
+        cout << "Quel est votre premier solde?" << endl;
+        cout << "Premier solde:";
+        cin >> solde_initial;
+        compteur++;
+    }
+
+};
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int n;
+
+    cout << "Combien de compte voulez-vous creer?" << " ";
+    cin >> n ;
+    Banque banque;
+
+    for (int i = 0; i < n; i++) {
+        banque.creerCompte("", 0);
+    }
+   
 }
-
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
-
-// Astuces pour bien démarrer : 
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
